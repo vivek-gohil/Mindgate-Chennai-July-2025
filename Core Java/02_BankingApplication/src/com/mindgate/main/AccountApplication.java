@@ -15,6 +15,7 @@ public class AccountApplication {
 		double amount;
 
 		Account account = new Account();
+
 		Scanner scanner = new Scanner(System.in);
 
 		System.out.println("Enter account number");
@@ -30,9 +31,10 @@ public class AccountApplication {
 		account.setBalance(balance);
 
 		System.out.println("Account Created !!");
-		System.out.println("Account Number = " + account.getAccountNumber() + " Name = " + account.getName()
-				+ " Balance = " + account.getBalance());
+//		System.out.println("Account Number = " + account.getAccountNumber() + " Name = " + account.getName()
+//				+ " Balance = " + account.getBalance());
 
+		System.out.println(account);
 		do {
 			System.out.println("Menu");
 			System.out.println("1. Withdraw");

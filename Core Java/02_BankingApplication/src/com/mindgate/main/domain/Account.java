@@ -5,6 +5,19 @@ public class Account {
 	private String name;
 	private double balance;
 
+	// Default constructor
+	public Account() {
+		System.out.println("Default constructor of Account");
+	}
+
+	// Overloaded constructor - 3 Param
+	public Account(int accountNumber, String name, double balance) {
+		System.out.println("Overloaded constructor of Account - 3 params");
+		this.accountNumber = accountNumber;
+		this.name = name;
+		this.balance = balance;
+	}
+
 	public boolean withdraw(double amount) {
 		if (amount > 0 && amount <= balance) {
 			balance -= amount;
@@ -43,6 +56,10 @@ public class Account {
 
 	public void setBalance(double balance) {
 		this.balance = balance;
+	}
+
+	public String toString() {
+		return "Account [accountNumber=" + accountNumber + ", name=" + name + ", balance=" + balance + "]";
 	}
 
 }

@@ -23,10 +23,11 @@ public class EmployeeMainV2 {
 		System.out.println("Enter salary");
 		double salary = scanner.nextDouble();
 
-		Employee employee = new Employee();
-		employee.setEmployeeId(employeeId);
-		employee.setName(name);
-		employee.setSalary(salary);
+//		Employee employee = new Employee();
+//		employee.setEmployeeId(employeeId);
+//		employee.setName(name);
+//		employee.setSalary(salary);
+		Employee employee = new Employee(employeeId, name, salary);
 
 		double ctc = employee.calculateSalary(12000, 100000);
 		System.out.println(employee.getEmployeeId());
