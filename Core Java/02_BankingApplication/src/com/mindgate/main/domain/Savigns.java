@@ -13,13 +13,13 @@ public class Savigns extends Account {
 		this.isSalary = isSalary;
 		System.out.println("Overloaded constructor of Savings");
 	}
-	
+
 	@Override
 	public boolean withdraw(double amount) {
-		if(isSalary) {
+		if (isSalary) {
 			return super.withdraw(amount);
 		}
-		if(!isSalary && getBalance() - amount >= MINIMUM_BALANCE) {
+		if (!isSalary && getBalance() - amount >= MINIMUM_BALANCE) {
 			return super.withdraw(amount);
 		}
 		return false;
@@ -59,4 +59,11 @@ public class Savigns extends Account {
 		return MINIMUM_BALANCE;
 	}
 
+	@Override
+	public String toString() {
+		return "Savigns [MINIMUM_BALANCE=" + MINIMUM_BALANCE + ", isSalary=" + isSalary + ", getAccountNumber()="
+				+ getAccountNumber() + ", getName()=" + getName() + ", getBalance()=" + getBalance() + "]";
+	}
+
+	
 }
