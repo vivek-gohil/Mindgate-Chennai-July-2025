@@ -1,6 +1,6 @@
 package com.mindgate.main.domain;
 
-public class Account {
+public abstract class Account {
 	private int accountNumber;
 	private String name;
 	private double balance;
@@ -18,13 +18,14 @@ public class Account {
 		this.balance = balance;
 	}
 
-	public boolean withdraw(double amount) {
-		if (amount > 0 && amount <= balance) {
-			balance -= amount;
-			return true;
-		}
-		return false;
-	}
+	public abstract boolean withdraw(double amount);
+//	public boolean withdraw(double amount) {
+//		if (amount > 0 && amount <= balance) {
+//			balance -= amount;
+//			return true;
+//		}
+//		return false;
+//	}
 
 	public boolean deposit(double amount) {
 		if (amount > 0) {
