@@ -1,0 +1,20 @@
+Spring Batch Project - Steps
+1. Download - customer.csv
+2. Create customer_details table
+3. Create new Spring Boot project - Web,h2,jdbc,batch dependencies
+4. application.properties - add spring batch and database configuration
+5. Create domain class - Customer.java
+6. Create processor class -  CustomerItemProcessor.java
+	CustomerItemProcessor implements ItemProcessor<Customer,Customer>
+7. Create listener class - CustomerJobExecutionListener.java
+	CustomerJobExecutionListener implements JobExecutionListener
+		status == completed
+8. Create configuration class - CustomerBatchConfiguration.java
+	a. @bean - FlatFileItemReader object using FlatFileItemReaderBuilder
+	b. @bean - CustomerItemProcessor object
+	c. @bean - JdbcBatchItemWriter object using JdbcBatchItemWriterBuilder(DataSource)
+	d. @bean - Step object using StepBuilder(JobRepository,DataSourceTransactionManager,FlatFileItemReader,ItemProcessor,JdbcBatchItemWriter)
+	e. @bean - Job object using JobBuilder(JobRepository,ExecutionListener,Step)
+
+
+	 
