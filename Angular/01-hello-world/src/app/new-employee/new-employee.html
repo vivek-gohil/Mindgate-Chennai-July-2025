@@ -1,0 +1,14 @@
+<p>New Employee</p>
+<form (submit)="display()">
+    <label for="employeeId">Employee Id</label>
+    <input type="text" name="employeeId" [(ngModel)]="employee.employeeId">
+    <br><br>
+    <label for="name">Name</label>
+    <input type="text" name="name"  [(ngModel)]="employee.name">
+    <br><br>
+    <label for="salary">Salary</label>
+    <input type="text" name="salary"  [(ngModel)]="employee.salary">
+    <br><br>
+    <input type="submit" value="Save">
+</form>
+

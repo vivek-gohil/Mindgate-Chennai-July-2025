@@ -1,0 +1,39 @@
+<div>
+    <h3>Employee Details</h3>
+    <table id="employee">
+        <tr>
+            <th>Employee Id</th>
+            <td>{{employee.employeeId}}</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>{{employee.name}}</td>
+        </tr>
+        <tr>
+            <th>Salary</th>
+            <td>{{employee.salary}}</td>
+        </tr>
+        <tr>
+            <th>Date of Birth</th>
+            <td>{{employee.dateOfBirth}}</td>
+        </tr>
+        <tr>
+            <th>Department Name</th>
+            <td>{{employee.departmentDTO.departmentName}}</td>
+        </tr>
+        <tr>
+            <th>Gender</th>
+            <td>{{employee.gender}}</td>
+        </tr>
+        <tr>
+            <th>State</th>
+            <td>{{employee.state}}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{employee.emailId}}</td>
+        </tr>
+    </table>
+    <br>
+  <button (click)="backToHome()">Back to Home</button>
+</div>

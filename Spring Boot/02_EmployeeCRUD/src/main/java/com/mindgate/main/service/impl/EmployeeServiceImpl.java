@@ -10,6 +10,8 @@ import com.mindgate.main.mapper.EmployeeMapper;
 import com.mindgate.main.repository.EmployeeRepository;
 import com.mindgate.main.service.EmployeeService;
 
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 @Service
 public class EmployeeServiceImpl implements EmployeeService{
 	private EmployeeRepository employeeRepository;
@@ -19,8 +21,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 	public EmployeeDTO getEmployeeByEmployeeId(String employeeId) {
-		// TODO Auto-generated method stub
-		return employeeRepository.getEmployeeByEmployeeId(employeeId);
+		EmployeeDTO employeeDTO = employeeRepository.getEmployeeByEmployeeId(employeeId);
+		log.info(employeeDTO.toString());
+		return employeeDTO; 
 	}
 
 	public boolean deleteEmployeeByEmployeeId(String employeeId) {

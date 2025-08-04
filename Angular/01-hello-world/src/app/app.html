@@ -1,0 +1,28 @@
+<h2>Hello World From Angular</h2>
+{{name}}
+<br>
+<button (click)="displayFirst()">First Component</button>
+<button (click)="displaySecond()">Second Component</button>
+<br>
+<br>
+
+<div *ngIf="isFirstVisible">
+  <app-first></app-first>
+</div>
+
+<br>
+<br>
+
+<div [hidden]="!isSecondVisible">
+  <app-second></app-second>
+</div>
+
+<br>
+<br>
+
+<app-all-employees></app-all-employees>
+
+<br>
+<br>
+
+<app-new-employee></app-new-employee>

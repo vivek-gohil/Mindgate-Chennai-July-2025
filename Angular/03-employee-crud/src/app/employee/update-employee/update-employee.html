@@ -1,0 +1,46 @@
+<h2>Update Employee</h2>
+<div [hidden]="isVisible">
+  <form (submit)="updateEmployee()">
+    <label for="employeeeId">Employee Id</label>
+    <input type="text" name="employeeeId" [(ngModel)]="employee.employeeId" readonly="true">
+
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Your name.." [(ngModel)]="employee.name">
+
+    <label for="salary">Salary</label>
+    <input type="text" name="salary" placeholder="Your salary.." [(ngModel)]="employee.salary">
+
+    <label for="dateOfBirth">Date of Birth</label>
+    <input type="date" name="dateOfBirth" [(ngModel)]="employee.dateOfBirth">
+
+    <label for="department">Select Department</label>
+    <select name="department" [(ngModel)]="employee.departmentDTO.departmentId">
+      <option value="-">Select Department</option>
+      <option *ngFor="let d of departments" value="{{d.departmentId}}">{{d.departmentName}}</option>
+    </select>
+    <label for="gender">Select Gender</label>
+    <select name="gender" [(ngModel)]="employee.gender">
+      <option value="-">Select Gender</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="state">State </label>
+    <select name="state" [(ngModel)]="employee.state">
+      <option value="-">Select State</option>
+      <option *ngFor="let s of states" value="{{s}}">{{s}}</option>
+    </select>
+
+    <label for="emailId">Email</label>
+    <input type="email" name="emailId" placeholder="Your Email.." [(ngModel)]="employee.emailId">
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+<div [hidden]="!isVisible">
+  <br>
+  <h4>{{responseDTO.responseMessage}}</h4>
+  <br>
+  <button (click)="backToHome()">Back to Home</button>
+</div>
